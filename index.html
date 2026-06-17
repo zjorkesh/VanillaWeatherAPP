@@ -17,13 +17,28 @@
   <body>
     <div class="container">
       <div class="weather-wrapper">
+        <form id="search-form" class="mb-4">
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city..."
+                class="input-form"
+                id="city-input"
+              />
+            </div>
+            <div class="col-2">
+              <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+          </div>
+        </form>
         <h1 id="city"></h1>
         <h2 id="date"></h2>
         <div class="row">
           <div class="col-6 temperature-container">
             <img src="" alt="" id="icon" />
 
-            <span id="temperature"> </span>
+            <span id="temperature"></span>
             <span class="temperature-units">°C | °F</span>
           </div>
           <div class="col-6">
@@ -32,6 +47,11 @@
               <li>humidity: <span id="humidity"></span>%</li>
               <li>Wind: <span id="wind-speed"></span> km/h</li>
             </ul>
+            <div class="row">
+              <div class="col-12" class="feel-temperature">
+                <span>Feels like </span><span id="feels-temperature"></span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

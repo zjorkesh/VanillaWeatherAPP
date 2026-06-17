@@ -75,3 +75,8 @@ li::first-letter {
 .coder {
     padding-bottom: 20px;
 }
+
+.feel-temperature {
+    align-items: right;
+
+}

@@ -17,6 +17,7 @@ function displayTemperature(response){
     let dateElement = document.querySelector("#date");
     let cityElement = document.querySelector("#city");
     let temperatureElement = document.querySelector("#temperature");
+    let feelsLikeElement = document.querySelector("#feels-temperature");
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind-speed");
@@ -25,6 +26,7 @@ function displayTemperature(response){
     dateElement.innerHTML = formatDate(response.data.time*1000);
     cityElement.innerHTML = response.data.city;
     temperatureElement.innerHTML= Math.round(response.data.temperature.current);
+    feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.temperature.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -32,8 +34,23 @@ function displayTemperature(response){
     iconElement.setAttribute ("alt", response.data.condition.description);
 }
 
-let apiKey = "8f8ba35f23t75fbc75d7do5424f8040b";
-let city = "Tehran";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+function search (city){
+    let apiKey = "8f8ba35f23t75fbc75d7do5424f8040b";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+    axios.get(apiUrl).then(displayTemperature);
 
-axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+   search(cityInputElement.value);
+
+
+}
+
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Isfahan");
