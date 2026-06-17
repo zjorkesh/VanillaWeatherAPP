@@ -11,11 +11,7 @@ function formatDate (timestamp){
         minutes= `0${minutes}`
     }
     return `${day} ${hours}:${minutes}`;
-    console.log(timestamp);
-
 }
-
-
 
 function displayTemperature(response){
     let dateElement = document.querySelector("#date");
@@ -34,14 +30,10 @@ function displayTemperature(response){
     windElement.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
     iconElement.setAttribute ("alt", response.data.condition.description);
-    
-
 }
-
 
 let apiKey = "8f8ba35f23t75fbc75d7do5424f8040b";
 let city = "Tehran";
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-
 
 axios.get(apiUrl).then(displayTemperature);
