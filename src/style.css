@@ -6,7 +6,7 @@ body {
 
 }
 
-div.container {
+.container {
 
     max-width: 500px;
     margin: 0 auto;
@@ -17,17 +17,14 @@ div.container {
     box-shadow: rgba(65, 50, 100, 0.08) 0px 30px 50px 0px;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-}
 
-#city {
+
+h1 {
     color: #373637;
     padding: 10px 0;
 }
 
-#date {
+h2 {
     font-size: 20px;
     color: rgb(86, 85, 85);
     padding-bottom: 30px;
@@ -35,8 +32,39 @@ div.container {
 }
 
 
+.temperature-container {
+    display: flex;
+    align-items: center;
+
+
+}
+
+#temperature {
+    font-size: 45px;
+    font-weight: 700;
+
+}
+
+.temperature-units {
+    position: relative;
+    font-size: 16px;
+    top: -18px;
+}
+
+.condition {
+    color: #7d7d7f;
+    margin-left: 80px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 li {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 li::first-letter {
