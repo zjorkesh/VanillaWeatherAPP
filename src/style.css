@@ -83,7 +83,8 @@ li::first-letter {
     margin-left: 20px;
     margin-top: -25px;
     font-size: 13px;
-    color: #F65282;
+    color: #0069d9;
+    ;
 }
 
 .input-form {
@@ -91,10 +92,20 @@ li::first-letter {
     height: 80%;
     margin-top: 20px;
     border-radius: 5px;
+    border: 1px solid #885DF1;
 
 }
 
 .btn-primary {
     height: 80%;
     margin-top: 20px;
+    background-color: #885DF1;
+    border: 1px solid #885DF1;
+}
+
+.btn-primary:hover {
+
+
+    border: 1px solid #0069d9;
+
 }
