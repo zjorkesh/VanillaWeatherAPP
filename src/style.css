@@ -1,13 +1,10 @@
 body {
     background-color: #F9F7FE;
     font-family: arial, sans-serif;
-
     padding-top: 100px;
-
 }
 
 .container {
-
     max-width: 500px;
     margin: 0 auto;
     border: 1px solid rgb(247, 245, 246);
@@ -17,44 +14,42 @@ body {
     box-shadow: rgba(65, 50, 100, 0.08) 0px 30px 50px 0px;
 }
 
-
-
 h1 {
-    color: #373637;
+    color: #885DF1;
     padding: 10px 0;
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-weight: 800;
 }
 
 h2 {
     font-size: 20px;
     color: rgb(86, 85, 85);
     padding-bottom: 30px;
-
 }
 
-
-.temperature-container {
-    display: flex;
-    align-items: center;
-
-
+.input-form {
+    width: 100%;
+    height: 80%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #885DF1;
 }
 
-#temperature {
-    font-size: 45px;
-    font-weight: 700;
-
+.input-form:focus {
+    outline: none;
+    border-color: #0069d9;
 }
 
-.temperature-units {
-    position: relative;
-    font-size: 16px;
-    top: -18px;
+.btn-primary {
+    height: 80%;
+    margin-top: 20px;
+    background-color: #885DF1;
+    border: 1px solid #885DF1;
 }
 
-.condition {
-    color: #7d7d7f;
-    margin-left: 85px;
-
+.btn-primary:hover {
+    border: 1px solid #0069d9;
 }
 
 ul {
@@ -72,9 +67,20 @@ li::first-letter {
     text-transform: uppercase;
 }
 
+.temperature-container {
+    display: flex;
+    align-items: center;
+}
 
-.coder {
-    padding-bottom: 20px;
+#temperature {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.temperature-units {
+    position: relative;
+    font-size: 16px;
+    top: -18px;
 }
 
 .feel-temperature {
@@ -84,28 +90,13 @@ li::first-letter {
     margin-top: -25px;
     font-size: 13px;
     color: #0069d9;
-    ;
 }
 
-.input-form {
-    width: 100%;
-    height: 80%;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: 1px solid #885DF1;
-
+.condition {
+    color: #7d7d7f;
+    margin-left: 85px;
 }
 
-.btn-primary {
-    height: 80%;
-    margin-top: 20px;
-    background-color: #885DF1;
-    border: 1px solid #885DF1;
-}
-
-.btn-primary:hover {
-
-
-    border: 1px solid #0069d9;
-
+.coder {
+    padding-bottom: 20px;
 }
