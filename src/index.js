@@ -38,15 +38,12 @@ function search (city){
     let apiKey = "8f8ba35f23t75fbc75d7do5424f8040b";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(apiUrl).then(displayTemperature);
-
 }
 
 function handleSubmit(event){
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
    search(cityInputElement.value);
-
-
 }
 
 

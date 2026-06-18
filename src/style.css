@@ -16,16 +16,16 @@ body {
 
 h1 {
     color: #885DF1;
-    padding: 10px 0;
-    margin-bottom: 0px;
+    padding: 0;
+    margin-bottom: 10px;
     font-size: 30px;
     font-weight: 800;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 18px;
     color: rgb(86, 85, 85);
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .input-form {
@@ -97,6 +97,7 @@ li::first-letter {
     margin-left: 85px;
 }
 
-.coder {
+.host {
     padding-bottom: 20px;
+    font-size: 15px;
 }
