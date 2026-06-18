@@ -35,26 +35,27 @@
         <h1 id="city"></h1>
         <h2 id="date"></h2>
         <div class="row">
-          <div class="col-6 temperature-container">
+          <div class="col-6">
+           <div class="temperature-container">
             <img src="" alt="" id="icon" />
 
             <span id="temperature"></span>
             <span class="temperature-units">°C | °F</span>
+           </div>
+
+           <div class="feel-temperature">
+                <span>Feels like </span><span id="feels-temperature"></span>
+           </div>
           </div>
+
           <div class="col-6">
             <ul class="condition">
-              <li id="description">Partly sunny</li>
+              <li id="description"></li>
               <li>humidity: <span id="humidity"></span>%</li>
               <li>Wind: <span id="wind-speed"></span> km/h</li>
             </ul>
-            <div class="row">
-              <div class="col-12" class="feel-temperature">
-                <span>Feels like </span><span id="feels-temperature"></span>
-              </div>
-            </div>
           </div>
         </div>
-      </div>
       <hr />
       <div class="coder">
         <small>
