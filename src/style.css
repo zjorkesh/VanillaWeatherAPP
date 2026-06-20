@@ -83,11 +83,20 @@ li::first-letter {
     top: -18px;
 }
 
+.temperature-units a {
+    color: #0069d9;
+    text-decoration: none;
+}
+
+.temperature-units a.active {
+    color: black;
+}
+
 .feel-temperature {
 
     text-align: left;
     margin-left: 20px;
-    margin-top: -25px;
+    margin-top: -20px;
     font-size: 13px;
     color: #0069d9;
 }

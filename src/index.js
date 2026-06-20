@@ -25,7 +25,10 @@ function displayTemperature(response){
 
     dateElement.innerHTML = formatDate(response.data.time*1000);
     cityElement.innerHTML = response.data.city;
-    temperatureElement.innerHTML= Math.round(response.data.temperature.current);
+    
+    celsiusTemperature = response.data.temperature.current
+
+    temperatureElement.innerHTML= Math.round(celsiusTemperature);
     feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
     descriptionElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.temperature.humidity;
@@ -46,8 +49,32 @@ function handleSubmit(event){
    search(cityInputElement.value);
 }
 
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+function showFahrenheitTemperature (event){
+    event.preventDefault();
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+     let temperatureElement = document.querySelector("#temperature");
+     let fahrenheitTemperature= (celsiusTemperature*1.8)+32;
+     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);  
+}
+
+function showCelsiusTemperature (event){
+    event.preventDefault();
+    fahrenheitLink.classList.remove("active");
+    celsiusLink.classList.add("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML= Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Stockholm");
