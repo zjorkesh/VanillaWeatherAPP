@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     border: 1px solid rgb(247, 245, 246);
     border-radius: 10px;
@@ -33,12 +33,14 @@ h2 {
     height: 80%;
     margin-top: 20px;
     border-radius: 5px;
-    border: 1px solid #885DF1;
+    border: 1px solid #F9F7FE;
+    background-color: #F9F7FE;
 }
 
 .input-form:focus {
     outline: none;
     border-color: #0069d9;
+    background-color: white;
 }
 
 .btn-primary {
@@ -104,9 +106,15 @@ li::first-letter {
 .condition {
     color: #7d7d7f;
     margin-left: 85px;
+    white-space: nowrap;
 }
 
 .host {
     padding-bottom: 20px;
-    font-size: 15px;
+    font-size: 18px;
+}
+
+.coder {
+    color: #885DF1;
+    font-weight: bold;
 }
