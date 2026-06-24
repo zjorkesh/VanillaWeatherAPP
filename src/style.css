@@ -100,7 +100,7 @@ li::first-letter {
     margin-left: 20px;
     margin-top: -20px;
     font-size: 13px;
-    color: #0069d9;
+    color: #3b3c3d;
 }
 
 .condition {
@@ -125,4 +125,15 @@ li::first-letter {
     text-align: center;
     margin-top: 30px;
     flex-wrap: wrap;
+    color: #7d7d7f;
+}
+
+.forecast-max {
+    color: #0069d9;
+    font-weight: bold;
+}
+
+.forecast-min {
+    color: rgb(221, 73, 108);
+    font-weight: bold;
 }

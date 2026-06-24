@@ -29,6 +29,14 @@ function displayTemperature(response){
     celsiusTemperature = response.data.temperature.current;
     celsiusFeelsLike = response.data.temperature.feels_like;
 
+    if (Math.round(celsiusFeelsLike) > Math.round(celsiusTemperature)) {
+    feelsLikeElement.style.color = "rgb(221, 73, 108)";
+    } else if (Math.round(celsiusFeelsLike) < Math.round(celsiusTemperature)) {
+    feelsLikeElement.style.color = "#0069d9";
+    } else {
+    feelsLikeElement.style.color = "#3b3c3d";
+    }
+
     temperatureElement.innerHTML= Math.round(celsiusTemperature);
     feelsLikeElement.innerHTML = Math.round(celsiusFeelsLike);
     descriptionElement.innerHTML = response.data.condition.description;
@@ -65,24 +73,11 @@ function handleSubmit(event){
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-function showFahrenheitTemperature (event){
-    event.preventDefault();
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-     let temperatureElement = document.querySelector("#temperature");
-     let fahrenheitTemperature= (celsiusTemperature*1.8)+32;
 
-     let feelsLikeElement = document.querySelector("#feels-temperature");
-     let fahrenheitFeelsLike = (celsiusFeelsLike*1.8)+32;
-
-     temperatureElement.innerHTML = Math.round(fahrenheitTemperature); 
-     feelsLikeElement.innerHTML= Math.round(fahrenheitFeelsLike); 
-}
 
 function showCelsiusTemperature (event){
     event.preventDefault();
-    fahrenheitLink.classList.remove("active");
-    celsiusLink.classList.add("active");
+    
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML= Math.round(celsiusTemperature);
 
@@ -91,7 +86,7 @@ function showCelsiusTemperature (event){
 }
 
 function displayForecast(response){
-    
+
     forecastData = response.data.daily;
     let forecast = response.data.daily;
 
@@ -105,8 +100,8 @@ function displayForecast(response){
              <div>${formatDay(day.time)}</div>
              <img src="${day.condition.icon_url}" alt="">
              <div>
-              ${Math.round(day.temperature.maximum)}°
-              ${Math.round(day.temperature.minimum)}°
+              <span class = "forecast-max">${Math.round(day.temperature.maximum)}°</span>
+              <span class = "forecast-min">${Math.round(day.temperature.minimum)}°</span>
              </div>
             </div>
 
@@ -132,8 +127,7 @@ let celsiusFeelLike = null;
 let forecastData = null;
 
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
