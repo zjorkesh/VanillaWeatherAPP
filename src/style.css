@@ -128,12 +128,12 @@ li::first-letter {
     color: #7d7d7f;
 }
 
-.forecast-max {
+.forecast-min {
     color: #0069d9;
     font-weight: bold;
 }
 
-.forecast-min {
+.forecast-max {
     color: rgb(221, 73, 108);
     font-weight: bold;
 }
